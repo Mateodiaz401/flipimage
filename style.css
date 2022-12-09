@@ -1,0 +1,48 @@
+.card {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    font-size: 28pt;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: #282A3A;
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.card-back {
+    background: #bfb697;
+    transform: rotateY(180deg);
+    user-select: none;
+}
+
+.card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+    transform: rotateY(0) rotateZ(0);
+}
+
+.flip-z .card-back {
+    transform: rotateY(180deg) rotateZ(50deg);
+
+}
+
+.flip-z:hover .card-front {
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+img {
+    width: 250px;
+    height: 250px;
+}
